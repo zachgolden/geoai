@@ -1,0 +1,31 @@
+{
+  "name": "geoai_website",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "gridfs-stream": "^1.1.1",
+    "method-override": "^2.3.10",
+    "mongodb": "^3.0.4",
+    "mongoose": "^5.0.12",
+    "multer": "^1.3.0",
+    "multer-gridfs-storage": "^3.0.1",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.2"
+  }
+}

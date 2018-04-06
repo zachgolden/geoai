@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #A0D67F;
+  height: 100px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App .navbar {
+    margin-bottom: 0px;
+    background-color: #A0D67F;
+    color: #636363;
+    height: 60px;
+  }
+
+.App .navbar a {
+  color: #636363; }
+
+.App .navbar a:hover {
+  color: #f3f3f3; }
+
+.App .navbar ul li a {
+color: #636363; }
+
+.App .navbar ul li a:link {
+  color: #f3f3f3; }
+
+.App .navbar ul li a:visited {
+  color: #f3f3f3; }
+
+.App .navbar ul li a:hover {
+  color: #f3f3f3; }
+
+.App .navbar ul li a:active {
+  color: #f3f3f3; }
+
+.App .navbar ul li:link {
+background: #626e60; }
+
+.App .navbar ul li:visited {
+background: #626e60; }
+
+.App .navbar ul li:hover {
+background: #626e60; }
+
+.App .navbar ul li:active {
+background: #626e60; }
+
+.App .footer {
+  background-color: #A0D67F ;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.App .footer-content{
+ padding-top: 10px;
+}
