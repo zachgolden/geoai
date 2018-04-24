@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
 import {Button, Jumbotron} from 'react-bootstrap';
+import {login, isLoggedIn} from '../utils/authService'
+import {Link} from 'react-router-3';
+import Nav from './Nav';
+import Footer from './Footer';
 import "../stylesheets/About.css"
 
-class About extends React.Component {
+class About extends Component {
 
   render() {
-    var style = {
-      
-    };
-
     return(
-      <Jumbotron >
+    <div>
+      <Nav />
+      <Jumbotron>
         <h1>AI in Geoscience</h1>
         <p>
         Our project hopes to help with blur recognition and classification of
@@ -19,9 +21,13 @@ class About extends React.Component {
         for others!
         </p>
         <p>
-          <Button bsStyle="primary">Register</Button>
+          {
+            ( isLoggedIn() ) ? <Link to="/files">Go to File Directory</Link> :  (<Button bsStyle="primary" onClick={() => login()}>Login</Button>)
+          }
         </p>
       </Jumbotron>
+    <Footer />
+    </div>
   );
   }
 }
