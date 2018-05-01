@@ -7,6 +7,7 @@
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
+    "bootstrap3": "^3.3.5",
     "ejs": "^2.5.8",
     "express": "^4.16.3",
     "gridfs-stream": "^1.1.1",

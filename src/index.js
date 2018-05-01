@@ -11,7 +11,6 @@ import { Router, Route, browserHistory } from 'react-router-3';
 import registerServiceWorker from './registerServiceWorker';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
-
 //const express = require('express');
 //const app = express();
 //const port = 5000;
@@ -28,7 +27,6 @@ const Root = () => {
     </div>
   )
 }
-
 
 ReactDOM.render(<Root />, document.getElementById('root'));
 registerServiceWorker();
