@@ -8,6 +8,7 @@ const CLIENT_ID = '5OQlXdboBwrAbBMcwi514P9NQ4xvvTDK';
 const CLIENT_DOMAIN = 'geoai.auth0.com';
 //TO RUN ON SIMON (OR SERVER) USE:
 //const REDIRECT = 'http://simon.cs.plu.edu/callback';
+//const REDIRECT = 'http://152.117.176.4:3000';
 //Note that this must be in the auth0 allowed callback list
 const REDIRECT = 'http://localhost:3000/callback';
 const SCOPE = 'openid';

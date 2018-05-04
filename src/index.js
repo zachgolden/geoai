@@ -6,6 +6,7 @@ import About from './components/About';
 import Directory from './components/Directory';
 import Login from './components/Login';
 import Callback from './components/Callback';
+import Predict from './components/PredictTest';
 import { requireAuth } from './utils/authService';
 import { Router, Route, browserHistory } from 'react-router-3';
 import registerServiceWorker from './registerServiceWorker';
@@ -23,6 +24,7 @@ const Root = () => {
         <Route path="/" component={About}/>
         <Route path="/files" component={Directory} onEnter={requireAuth}/>
         <Route path="/callback" component={Callback} />
+        <Route path="/prediction" component={Predict} />
       </Router>
     </div>
   )

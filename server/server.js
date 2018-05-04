@@ -10,12 +10,22 @@ const path = require('path');
 const logger = require('morgan');
 const config = require('./config');
 const mongoose = require('mongoose');
+//for file backup
+const fileUpload = require('express-fileupload');
 
+// view engine setup for file upload backup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 //middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+// if using file upload backup use app.use(bodyParser.urlencoded({extended: false}));
+// UPLOAD BACKUP ONLY app.use(fileUpload());
+
+
 
 const authCheck = jwt({
     secret: jwks.expressJwtSecret({
@@ -91,6 +101,37 @@ app.use('/api', require('./routes/file'));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
 });
+
+
+/*//file upload predict backup TEST ONLY
+app.use('/public', express.static(__dirname + '/public'));
+app.post('/upload', (req, res, next) => {
+  console.log(req);
+  let imageFile = req.files.file;
+
+  imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    res.json({file: `public/${req.body.filename}.jpg`});
+  });
+
+})
+
+/*app.post('/upload', (req, res, next) => {
+  console.log(req);
+  let imageFile = req.files.file;
+
+  imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
+    if (err) {
+      return res.status(500).send(err);
+    }
+
+    res.json({file: `public/${req.body.filename}.jpg`});
+  });
+
+});*/
 
 const port = process.env.PORT || 3333
 var serve = app.listen(port);

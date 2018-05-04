@@ -2,18 +2,19 @@ import React, {Component} from 'react';
 import {Form, FormGroup, HelpBlock, ControlLabel, FormControl, Panel} from 'react-bootstrap';
 import Nav from './Nav';
 import {getImage} from '../utils/fetch-api';
+import { Link } from 'react-router-3';
+import Footer from './Footer';
 
 
 class Directory extends Component {
   constructor(props) {
-  super(props);
-
-  this.state = {
-    files: [],
-    file: ''
-  }
-
+    super(props);
+    this.state = {
+      files: [],
+      file: ''
+    }
     this.loadFiles = this.loadFiles.bind(this);
+
   }
 
   componentDidMount() {
@@ -91,11 +92,15 @@ class Directory extends Component {
               <label for="file" class="custom-file-label" onChange={this.fileChanged.bind(this)}>Choose File</label>
             </div>
             <br></br>
+            <div class="card bg-secondary">
             <input type="submit" value="Submit" class="btn btn-primary btn-block" onClick={this.uploadFile.bind(this)}/>
-
+            </div>
+            <Link to="/prediction">Go to Prediction Test Page</Link>
           </div>
         </div>
       </form>
+
+
 
       <div class="card text-center m-3">
         <table class="table">
@@ -123,13 +128,36 @@ class Directory extends Component {
         </table>
       </div>
 
-      <div>
-
-      </div>
-
     </div>
      );
   }
 }
 
 export default Directory;
+
+/*
+Prediction backup test:
+view: 0
+
+this.setView.bind(this);
+
+loadView(){
+  switch(this.state.view){
+    case 1:
+      return (<Login />);
+    default:
+      return (<Footer />);
+  }
+}
+
+setView(viewNum){
+  this.setState( {view: viewNum} );
+}
+
+
+<input type="submit" value="Predict" class="btn btn-primary btn-block" eventKey={1} onClick={() => this.setView(1)} />
+
+<div class="card bg-secondary">
+  {this.loadView()}
+</div>
+*/
