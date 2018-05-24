@@ -1,3 +1,6 @@
+/*
+Unused component -- from initial site setup/concepts
+*/
 import React, { Component } from 'react';
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap';
 

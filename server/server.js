@@ -1,5 +1,10 @@
+/*
+Zach Golden
+Capstone 2018
+Backend express endpoint to handle calls to Auth0.
+Commented portion at the end is for PredictTest component 
+*/
 'use strict';
-
 const express = require('express');
 const app = express();
 const jwt = require('express-jwt');
@@ -11,7 +16,7 @@ const logger = require('morgan');
 const config = require('./config');
 const mongoose = require('mongoose');
 //for file backup
-const fileUpload = require('express-fileupload');
+//const fileUpload = require('express-fileupload');
 
 // view engine setup for file upload backup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,10 +27,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-// if using file upload backup use app.use(bodyParser.urlencoded({extended: false}));
-// UPLOAD BACKUP ONLY app.use(fileUpload());
-
-
+// UPLOAD BACKUP ONLY
+// if using file upload backup use
+//app.use(bodyParser.urlencoded({extended: false}));
+//app.use(fileUpload());
 
 const authCheck = jwt({
     secret: jwks.expressJwtSecret({
@@ -39,8 +44,7 @@ const authCheck = jwt({
     algorithms: ['RS256']
 });
 
-
-//TESTING API for serving restricted auth0
+//TESTING for serving restricted auth0 via API
 app.get('/api/fileTest/general',(req, res) => {
   let generalTest = [
   {
@@ -103,7 +107,7 @@ app.get('*', (req, res) => {
 });
 
 
-/*//file upload predict backup TEST ONLY
+/*/file upload predict backup TEST ONLY
 app.use('/public', express.static(__dirname + '/public'));
 app.post('/upload', (req, res, next) => {
   console.log(req);
@@ -118,20 +122,7 @@ app.post('/upload', (req, res, next) => {
   });
 
 })
-
-/*app.post('/upload', (req, res, next) => {
-  console.log(req);
-  let imageFile = req.files.file;
-
-  imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
-    if (err) {
-      return res.status(500).send(err);
-    }
-
-    res.json({file: `public/${req.body.filename}.jpg`});
-  });
-
-});*/
+*/
 
 const port = process.env.PORT || 3333
 var serve = app.listen(port);

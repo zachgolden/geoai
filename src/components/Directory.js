@@ -1,3 +1,10 @@
+/*
+Zach Golden
+Capstone 2018
+Component to handle uploading of file to a MongoDB instance.
+Also displays all of the files currently in the GridFS collection and allows for deletion from db.
+User must be authenticated, restricted routing path.
+*/
 import React, {Component} from 'react';
 import {Form, FormGroup, HelpBlock, ControlLabel, FormControl, Panel} from 'react-bootstrap';
 import Nav from './Nav';
@@ -21,6 +28,7 @@ class Directory extends Component {
     this.loadFiles();
   }
 
+  //call to load files from db
   loadFiles() {
     fetch('/api/files')
       .then(res => res.json())
@@ -41,6 +49,7 @@ class Directory extends Component {
     });
   }
 
+  //call to remove file from db
   deleteFile(event) {
     event.preventDefault();
     const id = event.target.id;
@@ -55,6 +64,7 @@ class Directory extends Component {
       })
   }
 
+  //call to upload file to db
   uploadFile(event) {
     event.preventDefault();
     let data = new FormData();
@@ -74,8 +84,6 @@ class Directory extends Component {
   }
 
   render() {
-
-    //const { images } = this.state;
     const { files } = this.state;
     return(
     <div>

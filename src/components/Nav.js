@@ -1,3 +1,8 @@
+/*
+Zach Golden
+Capstone 2018
+Component for navbar, link to base/about path. If logged in displays button to handle logout.
+*/
 import React, { Component } from 'react';
 import { Link } from 'react-router-3';
 //import '../App.css';
@@ -33,38 +38,3 @@ render() {
 }
 
 export default Nav;
-
-/*
-<nav className="navbar navbar-default">
-  <div className="navbar-header">
-    <Link className="navbar-brand" to="/">AI in Geoscience</Link>
-  </div>
-  <ul className="nav navbar-nav">
-
-  </ul>
-  <ul className="nav navbar-nav navbar-right">
-    <li>
-     {
-       ( isLoggedIn() ) ? ( <button className="btn btn-danger log" onClick={() => logout()}>Log out </button> ) : ''
-     }
-    </li>
-  </ul>
-</nav>
-
-
-
-<li>
-  {
-    ( isLoggedIn() ) ? <Link to="/files">Directory</Link> :  ''
-  }
-</li>
-
-
-{
-  ( isLoggedIn() ) ? ( <button className="btn btn-danger log" onClick={() => logout()}>Log out </button> ) : ( <button className="btn btn-info log" onClick={() => login()}>Log In</button> )
-}
-
-<li>
-  <Link to="/">Login</Link>
-</li>
-*/

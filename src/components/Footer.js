@@ -1,3 +1,6 @@
+/*
+Footer component.
+*/
 import React, { Component } from 'react';
 import styles from '../stylesheets/Footer.css';
 

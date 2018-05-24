@@ -1,3 +1,10 @@
+/*
+Zach Golden
+Capstone 2018
+Component to display initial screen. Button redirects to Auth0 login
+which callsback with link (given auth token exists) to the file upload
+and listing.  
+*/
 import React, {Component} from 'react';
 import {Button, Jumbotron} from 'react-bootstrap';
 import {login, isLoggedIn} from '../utils/authService'

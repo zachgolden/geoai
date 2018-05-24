@@ -1,11 +1,14 @@
 from flask import Flask, request, redirect, url_for, make_response, abort
 from werkzeug import secure_filename
-from pymongo import Connection
+from pymongo import Connection, MongoClient
 from bson.objectid import ObjectId
 from gridfs import GridFS
 from gridfs.errors import NoFile
 
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+#on server use
+#my_conn = MongoClient('mongodb://localhost:6000/geoai')
+#DB = myConn['geoai']
 DB = Connection().geoai
 FS = GridFS(DB)
 

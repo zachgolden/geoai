@@ -1,3 +1,6 @@
+/*
+Handle uploading/deletion to MongoDB using multer, monogoose, gridfs...
+*/
 const router = require('express').Router();
 const multer  = require('multer');
 const { mongo, connection } = require('mongoose');
@@ -15,7 +18,7 @@ const storage = require('multer-gridfs-storage')({
    }
 });
 
-// sets file input to single file
+// sets file input to single file //can be changed to multiple file upload...
 const singleUpload = multer({ storage: storage }).single('file');
 
 

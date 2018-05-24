@@ -1,3 +1,8 @@
+/*
+Zach Golden
+Capstone 2018
+Component for login function. Original iteration, unused now due to change to Auth0.
+*/
 import React, {Component} from 'react';
 import {Form, FormGroup, Col, Label, ControlLabel, FormControl, Checkbox, Button} from 'react-bootstrap';
 import "../stylesheets/Login.css"

@@ -1,3 +1,7 @@
+/*
+Zach Golden
+testing for api calls routing with axios, can be tested easily with Postman.
+*/
 import axios from 'axios';
 
 const BASE_URL = 'http://localhost:3333';
@@ -14,11 +18,13 @@ function getRestrictedData() {
   return axios.get(url).then(response => response.data);
 }
 
+//unused now
 function getImage() {
   const url = '${BASE_URL}/image/:filename';
   return axios.get(url).then(response => response.data);
 }
 
+//unused now
 function putImage() {
   const url = '${BASE_URL}/upload';
   return axios.post(url).then(response => response.data);

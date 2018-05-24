@@ -1,3 +1,11 @@
+/*
+Zach Golden
+Capstone 2018
+Authentication to Auth0 platform, from Auth0 documentation and
+initial quickstart with changes to connect to geoai.
+Connects to local host, to run on server you must have redirect setup on the
+Auth0 information.
+*/
 import decode from 'jwt-decode';
 import { browserHistory } from 'react-router-3';
 import auth0 from 'auth0-js';
@@ -56,7 +64,7 @@ function clearAccessToken() {
   localStorage.removeItem(ACCESS_TOKEN_KEY);
 }
 
-// Helper function that will allow us to extract the access_token and id_token
+// Helper function to extract the access_token and id_token
 function getParameterByName(name) {
   let match = RegExp('[#&]' + name + '=([^&]*)').exec(window.location.hash);
   return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
