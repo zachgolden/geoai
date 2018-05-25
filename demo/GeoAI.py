@@ -18,15 +18,20 @@ def main():
     # Load the SVM model from storage
     classifier = joblib.load(args.model)
 
+    #store the folder
     folder=args.input
     range=int(args.range)
 
+    #for loop go through the image folder
     for file in os.listdir(folder):
+
         path=os.path.join(folder, file)
         image=cv2.imread(path)
+        #when image is not void start croping image to 200x200
         if image is not None:
             height=np.size(image,0)
             width=np.size(image,1)
+            #if image size is less than 200x200, resize them to 200x200
             if height<200:
                 image=cv2.resize(image,(200,200))
             if width<200:
@@ -37,6 +42,7 @@ def main():
 
             y=200
             x=200
+            #each croped image will store as temo.jpg and get a score, this score will be store in the total
             while( y<height):
                 while(x<width):
                     cropped=image[y-200:y, x-200:x]
@@ -73,11 +79,13 @@ def main():
                     x=x+200
                 y=y+200
                 x=0
+            #when the average score less than score given by user, will be store in the good folder
             if total/count<range:
-                temp="/Users/zacharygolden/Desktop/ClearResult"
+                temp="D:\good"
                 cv2.imwrite(os.path.join(temp,file),image)
+            #when the average score greater than score given by user, will be store in the Blur folder
             else:
-                temp="/Users/zacharygolden/Desktop/BlurResult"
+                temp="D:\Blur"
                 cv2.imwrite(os.path.join(temp,file),image)
 
 
